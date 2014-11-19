@@ -9,11 +9,11 @@
 /* Begin PBXBuildFile section */
 		C948F3F91A1C662E0000A910 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = C948F3F81A1C662E0000A910 /* main.m */; };
 		C948F3FC1A1C662E0000A910 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = C948F3FB1A1C662E0000A910 /* AppDelegate.m */; };
-		C948F3FF1A1C662E0000A910 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C948F3FE1A1C662E0000A910 /* ViewController.m */; };
 		C948F4021A1C662E0000A910 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C948F4001A1C662E0000A910 /* Main.storyboard */; };
 		C948F4041A1C662E0000A910 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = C948F4031A1C662E0000A910 /* Images.xcassets */; };
 		C948F4071A1C662E0000A910 /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = C948F4051A1C662E0000A910 /* LaunchScreen.xib */; };
 		C948F4131A1C662E0000A910 /* MunchkinCounterTests.m in Sources */ = {isa = PBXBuildFile; fileRef = C948F4121A1C662E0000A910 /* MunchkinCounterTests.m */; };
+		C974302D1A1CCB2700D83A67 /* MPAMainViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C974302C1A1CCB2700D83A67 /* MPAMainViewController.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -32,14 +32,14 @@
 		C948F3F81A1C662E0000A910 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		C948F3FA1A1C662E0000A910 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		C948F3FB1A1C662E0000A910 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
-		C948F3FD1A1C662E0000A910 /* ViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ViewController.h; sourceTree = "<group>"; };
-		C948F3FE1A1C662E0000A910 /* ViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ViewController.m; sourceTree = "<group>"; };
 		C948F4011A1C662E0000A910 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		C948F4031A1C662E0000A910 /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
 		C948F4061A1C662E0000A910 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/LaunchScreen.xib; sourceTree = "<group>"; };
 		C948F40C1A1C662E0000A910 /* MunchkinCounterTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = MunchkinCounterTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		C948F4111A1C662E0000A910 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		C948F4121A1C662E0000A910 /* MunchkinCounterTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MunchkinCounterTests.m; sourceTree = "<group>"; };
+		C974302B1A1CCB2700D83A67 /* MPAMainViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MPAMainViewController.h; sourceTree = "<group>"; };
+		C974302C1A1CCB2700D83A67 /* MPAMainViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MPAMainViewController.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -83,9 +83,9 @@
 			children = (
 				C948F3FA1A1C662E0000A910 /* AppDelegate.h */,
 				C948F3FB1A1C662E0000A910 /* AppDelegate.m */,
-				C948F3FD1A1C662E0000A910 /* ViewController.h */,
-				C948F3FE1A1C662E0000A910 /* ViewController.m */,
 				C948F4001A1C662E0000A910 /* Main.storyboard */,
+				C974302B1A1CCB2700D83A67 /* MPAMainViewController.h */,
+				C974302C1A1CCB2700D83A67 /* MPAMainViewController.m */,
 				C948F4031A1C662E0000A910 /* Images.xcassets */,
 				C948F4051A1C662E0000A910 /* LaunchScreen.xib */,
 				C948F3F61A1C662E0000A910 /* Supporting Files */,
@@ -219,9 +219,9 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				C948F3FF1A1C662E0000A910 /* ViewController.m in Sources */,
 				C948F3FC1A1C662E0000A910 /* AppDelegate.m in Sources */,
 				C948F3F91A1C662E0000A910 /* main.m in Sources */,
+				C974302D1A1CCB2700D83A67 /* MPAMainViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -412,6 +412,7 @@
 				C948F4181A1C662E0000A910 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		C948F4191A1C662E0000A910 /* Build configuration list for PBXNativeTarget "MunchkinCounterTests" */ = {
 			isa = XCConfigurationList;
@@ -420,6 +421,7 @@
 				C948F41B1A1C662E0000A910 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
