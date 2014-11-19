@@ -14,6 +14,8 @@
 		C948F4071A1C662E0000A910 /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = C948F4051A1C662E0000A910 /* LaunchScreen.xib */; };
 		C948F4131A1C662E0000A910 /* MunchkinCounterTests.m in Sources */ = {isa = PBXBuildFile; fileRef = C948F4121A1C662E0000A910 /* MunchkinCounterTests.m */; };
 		C974302D1A1CCB2700D83A67 /* MPAMainViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C974302C1A1CCB2700D83A67 /* MPAMainViewController.m */; };
+		C97430301A1CD24A00D83A67 /* MPAPlayer.m in Sources */ = {isa = PBXBuildFile; fileRef = C974302F1A1CD24A00D83A67 /* MPAPlayer.m */; };
+		C97430331A1CD79000D83A67 /* MPAStartScreenViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C97430321A1CD79000D83A67 /* MPAStartScreenViewController.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -40,6 +42,10 @@
 		C948F4121A1C662E0000A910 /* MunchkinCounterTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MunchkinCounterTests.m; sourceTree = "<group>"; };
 		C974302B1A1CCB2700D83A67 /* MPAMainViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MPAMainViewController.h; sourceTree = "<group>"; };
 		C974302C1A1CCB2700D83A67 /* MPAMainViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MPAMainViewController.m; sourceTree = "<group>"; };
+		C974302E1A1CD24A00D83A67 /* MPAPlayer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MPAPlayer.h; sourceTree = "<group>"; };
+		C974302F1A1CD24A00D83A67 /* MPAPlayer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MPAPlayer.m; sourceTree = "<group>"; };
+		C97430311A1CD79000D83A67 /* MPAStartScreenViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MPAStartScreenViewController.h; sourceTree = "<group>"; };
+		C97430321A1CD79000D83A67 /* MPAStartScreenViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MPAStartScreenViewController.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -84,8 +90,12 @@
 				C948F3FA1A1C662E0000A910 /* AppDelegate.h */,
 				C948F3FB1A1C662E0000A910 /* AppDelegate.m */,
 				C948F4001A1C662E0000A910 /* Main.storyboard */,
+				C97430311A1CD79000D83A67 /* MPAStartScreenViewController.h */,
+				C97430321A1CD79000D83A67 /* MPAStartScreenViewController.m */,
 				C974302B1A1CCB2700D83A67 /* MPAMainViewController.h */,
 				C974302C1A1CCB2700D83A67 /* MPAMainViewController.m */,
+				C974302E1A1CD24A00D83A67 /* MPAPlayer.h */,
+				C974302F1A1CD24A00D83A67 /* MPAPlayer.m */,
 				C948F4031A1C662E0000A910 /* Images.xcassets */,
 				C948F4051A1C662E0000A910 /* LaunchScreen.xib */,
 				C948F3F61A1C662E0000A910 /* Supporting Files */,
@@ -220,6 +230,8 @@
 			buildActionMask = 2147483647;
 			files = (
 				C948F3FC1A1C662E0000A910 /* AppDelegate.m in Sources */,
+				C97430301A1CD24A00D83A67 /* MPAPlayer.m in Sources */,
+				C97430331A1CD79000D83A67 /* MPAStartScreenViewController.m in Sources */,
 				C948F3F91A1C662E0000A910 /* main.m in Sources */,
 				C974302D1A1CCB2700D83A67 /* MPAMainViewController.m in Sources */,
 			);

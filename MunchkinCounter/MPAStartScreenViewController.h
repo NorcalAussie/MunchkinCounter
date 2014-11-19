@@ -1,5 +1,5 @@
 //
-//  MPAMainViewController.h
+//  MPAStartScreenViewController.h
 //  MunchkinCounter
 //
 //  Created by Matt Pearce on 11/19/14.
@@ -8,8 +8,6 @@
 
 #import <UIKit/UIKit.h>
 
-@interface MPAMainViewController : UIViewController
-
-@property (nonatomic) int numberOfPlayers;
+@interface MPAStartScreenViewController : UIViewController
 
 @end
