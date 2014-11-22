@@ -16,6 +16,7 @@
 @property (strong, nonatomic) NSMutableArray *players;
 @property (strong, nonatomic) IBOutlet UINavigationItem *navBarTitle;
 @property (strong, nonatomic) IBOutlet UITextField *navBarTextField;
+@property (strong, nonatomic) IBOutlet UISwitch *warriorSwitch;
 
 @property (nonatomic) int currentPlayerIndex;
 
@@ -52,6 +53,8 @@
     
     self.navBarTitle.titleView = self.navBarTextField;
     
+    self.warriorSwitch.on = NO;
+    
     [self.navBarTextField setDelegate:self];
 
     
@@ -73,14 +76,20 @@
     
     MPAPlayer *player = [self.players objectAtIndex:self.currentPlayerIndex];
     
-    //self.navBarTitle.title = player.name;
-    
     player.strength = player.level + player.gear;
     
     self.navBarTextField.text = player.name;
     self.levelLabel.text = [NSString stringWithFormat:@"%d",player.level];
     self.gearLabel.text = [NSString stringWithFormat:@"%d",player.gear];
     self.strengthLabel.text = [NSString stringWithFormat:@"%d",player.strength];
+    
+    if(player.isWarrior){
+        self.warriorSwitch.on = YES;
+        
+    }else if(!player.isWarrior){
+        self.warriorSwitch.on = NO;
+        
+    }
     
     [self.players replaceObjectAtIndex:self.currentPlayerIndex withObject:player];
     
@@ -186,6 +195,23 @@
     [self.players replaceObjectAtIndex:self.currentPlayerIndex withObject:player];
     [self update];
 
+}
+
+- (IBAction)setWarrior:(id)sender {
+    
+    MPAPlayer *player = [self.players objectAtIndex:self.currentPlayerIndex];
+    if (player.isWarrior){
+        player.isWarrior = false;
+        
+    }else if (!player.isWarrior){
+        player.isWarrior = true;
+    }
+
+}
+
+- (IBAction)newGame:(id)sender {
+    
+    
 }
 
 /*
