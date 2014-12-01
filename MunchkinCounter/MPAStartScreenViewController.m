@@ -21,6 +21,14 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Do any additional setup after loading the view.
+    
+    //Check for game in Progresss
+    NSMutableArray *currentGame = [[NSUserDefaults standardUserDefaults] objectForKey:@"currentGame"];
+    if(currentGame != nil){
+        //If there is a current game skip this screen and go straight to game view
+        [self performSegueWithIdentifier:@"startGameSegue" sender:nil];
+    }
+
 }
 
 - (void)didReceiveMemoryWarning {

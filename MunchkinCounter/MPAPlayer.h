@@ -8,7 +8,7 @@
 
 #import <Foundation/Foundation.h>
 
-@interface MPAPlayer : NSObject
+@interface MPAPlayer : NSObject <NSCoding>
 
 @property (strong, nonatomic) NSString *name;
 @property (nonatomic) int level;

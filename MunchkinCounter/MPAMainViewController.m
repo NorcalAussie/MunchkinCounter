@@ -29,22 +29,9 @@
     
     self.navigationItem.hidesBackButton = YES;
     //self.navigationItem.leftBarButtonItem = nil;
-        
-    //Initialize ints
-    self.currentPlayerIndex = 0;
     
-    //Initialize labels to defaults
-    self.levelLabel.text = @"1";
-    self.gearLabel.text = @"0";
-    self.strengthLabel.text = @"1";
-    
-    //Initialize Array
-    self.players = [[NSMutableArray alloc] initWithCapacity:_numberOfPlayers];
-    
-    [self setUpPlayers];
     
     self.navBarTextField.frame = CGRectMake(0, 0, 100, 22);
-    self.navBarTextField.text = @"Player1";
     self.navBarTextField.textColor = [UIColor blackColor];
     self.navBarTextField.font = [UIFont boldSystemFontOfSize:19];
     self.navBarTextField.textAlignment = NSTextAlignmentCenter;
@@ -53,9 +40,39 @@
     
     self.navBarTitle.titleView = self.navBarTextField;
     
-    self.warriorSwitch.on = NO;
-    
     [self.navBarTextField setDelegate:self];
+    
+    //Set Up NSUserDefualts
+    NSMutableArray *currentGame = [[NSUserDefaults standardUserDefaults] objectForKey:@"currentGame"];
+    if(currentGame == nil){
+        //If nil, no saved game so initialize out array normally
+        self.players = [[NSMutableArray alloc] initWithCapacity:_numberOfPlayers];
+        
+        //Initialize ints
+        self.currentPlayerIndex = 0;
+        
+        //Initialize labels to defaults
+        self.levelLabel.text = @"1";
+        self.gearLabel.text = @"0";
+        self.strengthLabel.text = @"1";
+        
+        self.navBarTextField.text = @"Player1";
+        
+        self.warriorSwitch.on = NO;
+        
+        
+        [self setUpPlayers];
+        
+    }else{
+        //Else initialize our array with the NSUserDefualt Data
+        NSData *gameData = [[NSUserDefaults standardUserDefaults] objectForKey:@"currentGame"];
+        self.players = [NSKeyedUnarchiver unarchiveObjectWithData:gameData];
+        
+        self.numberOfPlayers = [self.players count];
+        
+        [self update];
+        
+    }
 
     
     //Logs
@@ -93,6 +110,10 @@
     
     [self.players replaceObjectAtIndex:self.currentPlayerIndex withObject:player];
     
+    //Update UserDefaults
+    NSData *data = [NSKeyedArchiver archivedDataWithRootObject:self.players];
+    [[NSUserDefaults standardUserDefaults] setObject:data forKey:@"currentGame"];
+    
 }
 
 - (void)setUpPlayers{
@@ -129,6 +150,7 @@
     UITextView *tv = (UITextView *)sender;
     player.name = tv.text;
     [self.players replaceObjectAtIndex:self.currentPlayerIndex withObject:player];
+    [self update];
     
 }
 
@@ -206,11 +228,13 @@
     }else if (!player.isWarrior){
         player.isWarrior = true;
     }
+    [self update];
 
 }
 
 - (IBAction)newGame:(id)sender {
-    
+    //Clear NSUserDefualt Data
+    [[NSUserDefaults standardUserDefaults] removeObjectForKey:@"currentGame"];
     
 }
 

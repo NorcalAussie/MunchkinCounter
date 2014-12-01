@@ -360,7 +360,7 @@
                                 <rect key="frame" x="16" y="2" width="110" height="40"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <subviews>
-                                    <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="SU5-vu-zCR">
+                                    <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" contentHorizontalAlignment="center" contentVerticalAlignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="SU5-vu-zCR">
                                         <rect key="frame" x="0.0" y="4" width="51" height="31"/>
                                         <variation key="heightClass=compact" misplaced="YES">
                                             <rect key="frame" x="0.0" y="4" width="51" height="31"/>
@@ -372,7 +372,7 @@
                                             <action selector="setWarrior:" destination="vXZ-lx-hvc" eventType="valueChanged" id="E1H-S8-RYn"/>
                                         </connections>
                                     </switch>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="Warrior" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="5fB-mM-K9t">
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Warrior" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="5fB-mM-K9t">
                                         <rect key="frame" x="57" y="9" width="53" height="21"/>
                                         <fontDescription key="fontDescription" name="HelveticaNeue-Light" family="Helvetica Neue" pointSize="17"/>
                                         <color key="textColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
@@ -568,9 +568,6 @@
                                         <fontDescription key="fontDescription" name="HelveticaNeue-Light" family="Helvetica Neue" pointSize="25"/>
                                         <color key="textColor" red="0.1529411765" green="0.1333333333" blue="0.054901960780000002" alpha="1" colorSpace="calibratedRGB"/>
                                         <nil key="highlightedColor"/>
-                                        <variation key="heightClass=regular" ambiguous="YES" misplaced="YES">
-                                            <rect key="frame" x="0.0" y="0.0" width="300" height="30"/>
-                                        </variation>
                                         <variation key="heightClass=compact-widthClass=compact" misplaced="YES">
                                             <rect key="frame" x="0.0" y="0.0" width="145" height="30"/>
                                         </variation>
@@ -597,9 +594,6 @@
                                         <variation key="heightClass=compact" ambiguous="YES" misplaced="YES">
                                             <rect key="frame" x="0.0" y="41" width="225" height="100"/>
                                         </variation>
-                                        <variation key="heightClass=regular" ambiguous="YES" misplaced="YES">
-                                            <rect key="frame" x="0.0" y="41" width="300" height="102"/>
-                                        </variation>
                                         <variation key="heightClass=compact-widthClass=compact" misplaced="YES">
                                             <fontDescription key="fontDescription" name="HelveticaNeue-Bold" family="Helvetica Neue" pointSize="40"/>
                                             <rect key="frame" x="58" y="38" width="30" height="70"/>
@@ -622,9 +616,6 @@
                                         <variation key="heightClass=compact" ambiguous="YES" misplaced="YES">
                                             <rect key="frame" x="0.0" y="187" width="225" height="100"/>
                                         </variation>
-                                        <variation key="heightClass=regular" ambiguous="YES" misplaced="YES">
-                                            <rect key="frame" x="0.0" y="281" width="300" height="102"/>
-                                        </variation>
                                         <variation key="widthClass=compact" misplaced="YES">
                                             <rect key="frame" x="36" y="302" width="135" height="100"/>
                                         </variation>
@@ -646,9 +637,6 @@
                                         <nil key="highlightedColor"/>
                                         <variation key="heightClass=compact" ambiguous="YES">
                                             <rect key="frame" x="99" y="143" width="26" height="54"/>
-                                        </variation>
-                                        <variation key="heightClass=regular" ambiguous="YES">
-                                            <rect key="frame" x="137" y="190" width="26" height="54"/>
                                         </variation>
                                         <variation key="widthClass=compact" misplaced="YES">
                                             <rect key="frame" x="36" y="233" width="135" height="61"/>
@@ -729,8 +717,7 @@
                                         <include reference="rey-8r-abx"/>
                                     </mask>
                                 </variation>
-                                <variation key="heightClass=regular" ambiguous="YES" misplaced="YES">
-                                    <rect key="frame" x="0.0" y="64" width="300" height="383"/>
+                                <variation key="heightClass=regular">
                                     <mask key="constraints">
                                         <exclude reference="8wL-Km-PlY"/>
                                     </mask>
@@ -772,9 +759,6 @@
                                         <fontDescription key="fontDescription" name="HelveticaNeue-Light" family="Helvetica Neue" pointSize="25"/>
                                         <color key="textColor" red="0.1529411765" green="0.1333333333" blue="0.054901960780000002" alpha="1" colorSpace="calibratedRGB"/>
                                         <nil key="highlightedColor"/>
-                                        <variation key="heightClass=regular" ambiguous="YES" misplaced="YES">
-                                            <rect key="frame" x="0.0" y="0.0" width="300" height="30"/>
-                                        </variation>
                                         <variation key="heightClass=compact-widthClass=compact" misplaced="YES">
                                             <rect key="frame" x="0.0" y="0.0" width="145" height="30"/>
                                         </variation>
@@ -787,9 +771,6 @@
                                         <fontDescription key="fontDescription" name="HelveticaNeue-Thin" family="Helvetica Neue" pointSize="45"/>
                                         <color key="textColor" red="0.1529411765" green="0.1333333333" blue="0.054901960780000002" alpha="1" colorSpace="calibratedRGB"/>
                                         <nil key="highlightedColor"/>
-                                        <variation key="heightClass=regular" ambiguous="YES">
-                                            <rect key="frame" x="137" y="190" width="26" height="54"/>
-                                        </variation>
                                         <variation key="widthClass=compact" misplaced="YES">
                                             <rect key="frame" x="36" y="233" width="135" height="61"/>
                                         </variation>
@@ -811,9 +792,6 @@
                                             <color key="titleColor" red="0.1529411765" green="0.1333333333" blue="0.054901960780000002" alpha="1" colorSpace="calibratedRGB"/>
                                             <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                         </state>
-                                        <variation key="heightClass=regular" ambiguous="YES" misplaced="YES">
-                                            <rect key="frame" x="0.0" y="41" width="300" height="102"/>
-                                        </variation>
                                         <variation key="heightClass=compact-widthClass=compact" misplaced="YES">
                                             <fontDescription key="fontDescription" name="HelveticaNeue-Bold" family="Helvetica Neue" pointSize="40"/>
                                             <rect key="frame" x="58" y="38" width="30" height="64"/>
@@ -830,9 +808,6 @@
                                             <color key="titleColor" red="0.1529411765" green="0.1333333333" blue="0.054901960780000002" alpha="1" colorSpace="calibratedRGB"/>
                                             <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                         </state>
-                                        <variation key="heightClass=regular" ambiguous="YES" misplaced="YES">
-                                            <rect key="frame" x="0.0" y="281" width="300" height="102"/>
-                                        </variation>
                                         <variation key="widthClass=compact" misplaced="YES">
                                             <rect key="frame" x="36" y="302" width="135" height="100"/>
                                         </variation>
@@ -897,8 +872,7 @@
                                 <variation key="heightClass=compact" ambiguous="YES" misplaced="YES">
                                     <rect key="frame" x="353" y="64" width="235" height="287"/>
                                 </variation>
-                                <variation key="heightClass=regular" ambiguous="YES" misplaced="YES">
-                                    <rect key="frame" x="300" y="64" width="300" height="383"/>
+                                <variation key="heightClass=regular">
                                     <mask key="constraints">
                                         <exclude reference="XRK-Jk-31j"/>
                                     </mask>
@@ -938,9 +912,6 @@
                                         <fontDescription key="fontDescription" name="HelveticaNeue-Light" family="Helvetica Neue" pointSize="24"/>
                                         <color key="textColor" red="0.1529411765" green="0.1333333333" blue="0.054901960780000002" alpha="1" colorSpace="calibratedRGB"/>
                                         <nil key="highlightedColor"/>
-                                        <variation key="heightClass=regular" ambiguous="YES" misplaced="YES">
-                                            <rect key="frame" x="0.0" y="0.0" width="89" height="29"/>
-                                        </variation>
                                         <variation key="widthClass=compact" misplaced="YES">
                                             <rect key="frame" x="156" y="410" width="89" height="62"/>
                                         </variation>
@@ -961,9 +932,6 @@
                                         <nil key="highlightedColor"/>
                                         <variation key="heightClass=compact" ambiguous="YES">
                                             <rect key="frame" x="27" y="50" width="37" height="77"/>
-                                        </variation>
-                                        <variation key="heightClass=regular" ambiguous="YES">
-                                            <rect key="frame" x="26" y="70" width="37" height="77"/>
                                         </variation>
                                         <variation key="widthClass=compact" misplaced="YES">
                                             <rect key="frame" x="156" y="480" width="89" height="62"/>
@@ -1028,8 +996,7 @@
                                         <include reference="sW4-kx-Eed"/>
                                     </mask>
                                 </variation>
-                                <variation key="heightClass=regular" ambiguous="YES" misplaced="YES">
-                                    <rect key="frame" x="256" y="455" width="89" height="178"/>
+                                <variation key="heightClass=regular">
                                     <mask key="constraints">
                                         <exclude reference="ABm-xq-IAX"/>
                                     </mask>
@@ -1169,7 +1136,7 @@
                                 <rect key="frame" x="16" y="2" width="110" height="40"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <subviews>
-                                    <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="zEb-Ol-eov">
+                                    <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" contentHorizontalAlignment="center" contentVerticalAlignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="zEb-Ol-eov">
                                         <rect key="frame" x="0.0" y="4" width="51" height="31"/>
                                         <variation key="heightClass=compact" misplaced="YES">
                                             <rect key="frame" x="0.0" y="4" width="51" height="31"/>
@@ -1181,7 +1148,7 @@
                                             <action selector="setWarrior:" destination="G7K-Jm-Vzs" eventType="valueChanged" id="7Dx-fs-QEL"/>
                                         </connections>
                                     </switch>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="Warrior" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="o52-K9-EYI">
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Warrior" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="o52-K9-EYI">
                                         <rect key="frame" x="57" y="9" width="53" height="21"/>
                                         <fontDescription key="fontDescription" name="HelveticaNeue-Light" family="Helvetica Neue" pointSize="17"/>
                                         <color key="textColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
