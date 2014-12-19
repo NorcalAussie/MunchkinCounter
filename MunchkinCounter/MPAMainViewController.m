@@ -89,6 +89,21 @@
 
 #pragma mark - Helper Functions
 
+- (BOOL)canBecomeFirstResponder{
+    return YES;
+    
+}
+
+- (void)motionEnded:(UIEventSubtype)motion withEvent:(UIEvent *)event{
+    if(UIEventSubtypeMotionShake){
+        int rollNumber = arc4random()%6;
+        NSString *rollMessage = [NSString stringWithFormat:@"You rolled a %d", rollNumber];
+        UIAlertView *dieRoll = [[UIAlertView alloc] initWithTitle:@"Die Roll" message:rollMessage delegate:self cancelButtonTitle:@"Ok" otherButtonTitles:nil, nil];
+        [dieRoll show];
+    }
+    
+}
+
 - (void)update {
     
     MPAPlayer *player = [self.players objectAtIndex:self.currentPlayerIndex];
@@ -233,8 +248,25 @@
 }
 
 - (IBAction)newGame:(id)sender {
-    //Clear NSUserDefualt Data
-    [[NSUserDefaults standardUserDefaults] removeObjectForKey:@"currentGame"];
+    //Confirm with user
+    UIAlertController *ac = [UIAlertController alertControllerWithTitle:@"Are you sure?" message:nil preferredStyle:UIAlertControllerStyleAlert];
+    
+    UIAlertAction *cancel = [UIAlertAction actionWithTitle:@"Cancel" style:UIAlertActionStyleCancel handler:^(UIAlertAction *action) {
+        
+    }];
+    UIAlertAction *confirm = [UIAlertAction actionWithTitle:@"Ok" style:UIAlertActionStyleDefault handler:^(UIAlertAction *action) {
+        //Clear NSUserDefualt Data
+        [[NSUserDefaults standardUserDefaults] removeObjectForKey:@"currentGame"];
+        [self performSegueWithIdentifier:@"newGameSegue" sender:self];
+        
+    }];
+    
+    [ac addAction:cancel];
+    [ac addAction:confirm];
+    
+    [self presentViewController:ac animated:YES completion:nil];
+    
+    
     
 }
 
