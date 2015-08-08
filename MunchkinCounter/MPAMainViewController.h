@@ -8,7 +8,7 @@
 
 #import <UIKit/UIKit.h>
 
-@interface MPAMainViewController : UIViewController
+@interface MPAMainViewController : UIViewController <UITabBarControllerDelegate>
 
 @property (nonatomic) int numberOfPlayers;
 

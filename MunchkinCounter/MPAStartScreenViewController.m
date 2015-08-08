@@ -13,6 +13,8 @@
 @property (strong, nonatomic) IBOutlet UITextField *textField;
 
 @property (nonatomic) int numberOfPlayers;
+@property (strong, nonatomic) UITabBarController *tbc;
+@property (strong, nonatomic) MPAMainViewController *mvc;
 
 @end
 
@@ -48,8 +50,9 @@
     
     if([[segue identifier] isEqualToString:@"startGameSegue"]){
         self.numberOfPlayers = [[self.textField text] intValue];
-        MPAMainViewController *mvc = [segue destinationViewController];
-        mvc.numberOfPlayers = self.numberOfPlayers;
+        self.tbc = (UITabBarController *) [segue destinationViewController];
+        self.mvc = [self.tbc.viewControllers objectAtIndex:0];
+        self.mvc.numberOfPlayers = self.numberOfPlayers;
         
     }
     

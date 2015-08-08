@@ -24,6 +24,8 @@
 
 @implementation MPAMainViewController
 
+@synthesize numberOfPlayers;
+
 - (void)viewDidLoad {
     [super viewDidLoad];
     
@@ -46,7 +48,7 @@
     NSMutableArray *currentGame = [[NSUserDefaults standardUserDefaults] objectForKey:@"currentGame"];
     if(currentGame == nil){
         //If nil, no saved game so initialize out array normally
-        self.players = [[NSMutableArray alloc] initWithCapacity:_numberOfPlayers];
+        self.players = [[NSMutableArray alloc] initWithCapacity:numberOfPlayers];
         
         //Initialize ints
         self.currentPlayerIndex = 0;
@@ -76,7 +78,7 @@
 
     
     //Logs
-    NSLog(@"Number of Players:%d",_numberOfPlayers);
+    NSLog(@"Number of Players:%d",numberOfPlayers);
     
     
     // Do any additional setup after loading the view.
@@ -88,6 +90,7 @@
 }
 
 #pragma mark - Helper Functions
+
 
 - (BOOL)canBecomeFirstResponder{
     return YES;
