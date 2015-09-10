@@ -92,8 +92,8 @@
 			children = (
 				C9C557281BA1561F0049B1DF /* Models */,
 				C9C557271BA155F30049B1DF /* StartView */,
-				C9C5572A1BA156A10049B1DF /* BattleView */,
 				C9C557291BA156390049B1DF /* MainView */,
+				C9C5572A1BA156A10049B1DF /* BattleView */,
 				C948F3F61A1C662E0000A910 /* Supporting Files */,
 			);
 			path = MunchkinCounter;

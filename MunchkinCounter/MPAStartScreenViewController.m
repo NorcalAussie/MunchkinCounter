@@ -16,21 +16,35 @@
 @property (strong, nonatomic) UITabBarController *tbc;
 @property (strong, nonatomic) MPAMainViewController *mvc;
 
+@property (nonatomic) NSMutableArray *currentGame;
+
 @end
 
 @implementation MPAStartScreenViewController
+
 
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Do any additional setup after loading the view.
     
-    //Check for game in Progresss
-    NSMutableArray *currentGame = [[NSUserDefaults standardUserDefaults] objectForKey:@"currentGame"];
-    if(currentGame != nil){
-        //If there is a current game skip this screen and go straight to game view
-        [self performSegueWithIdentifier:@"startGameSegue" sender:nil];
-    }
 
+
+}
+
+- (void)viewDidAppear:(BOOL)animated {
+    //Check for game in Progresss
+    self.currentGame = [[NSUserDefaults standardUserDefaults] objectForKey:@"currentGame"];
+    if(self.currentGame != nil){
+        //If there is a current game skip this screen and go straight to game view
+        [self performSegueWithIdentifier:@"startGameSegue" sender:self];
+    } else {
+        self.view.hidden = NO;
+    }
+    
+}
+
+- (void)viewWillAppear:(BOOL)animated {
+    self.view.hidden = YES;
 }
 
 - (void)didReceiveMemoryWarning {
@@ -43,19 +57,29 @@
     
 }
 
+-(BOOL) textFieldShouldReturn:(UITextField *)textField{
+    
+    [textField resignFirstResponder];
+    return YES;
+}
+
+- (IBAction)tapDetected:(id)sender {
+    [self.view endEditing:YES];
+}
+
 #pragma mark - Navigation
 
 // In a storyboard-based application, you will often want to do a little preparation before navigation
 - (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
     
     if([[segue identifier] isEqualToString:@"startGameSegue"]){
-        self.numberOfPlayers = [[self.textField text] intValue];
-        self.tbc = (UITabBarController *) [segue destinationViewController];
-        //self.mvc = (MPAMainViewController *) [self.tbc.viewControllers objectAtIndex:0];
-        UINavigationController *navController = [self.tbc.viewControllers objectAtIndex:0];
-        MPAMainViewController *mpa2 = (MPAMainViewController  *)navController.topViewController;
-        mpa2.numberOfPlayers = self.numberOfPlayers;
-        
+        if (self.currentGame == nil) {
+            self.numberOfPlayers = [[self.textField text] intValue];
+            self.tbc = (UITabBarController *) [segue destinationViewController];
+            UINavigationController *navController = [self.tbc.viewControllers objectAtIndex:0];
+            MPAMainViewController *mpa2 = (MPAMainViewController  *)navController.topViewController;
+            mpa2.numberOfPlayers = self.numberOfPlayers;
+        }
     }
     
 }
@@ -63,7 +87,7 @@
 - (BOOL)shouldPerformSegueWithIdentifier:(NSString *)identifier sender:(id)sender
 {
     if ([identifier isEqualToString:@"startGameSegue"]) {
-        if ([[self.textField text] intValue] >= 2 && [[self.textField text] intValue] <= 10){
+        if (([[self.textField text] intValue] >= 2 && [[self.textField text] intValue] <= 10) || self.currentGame != nil){
             return YES;
         }
     }

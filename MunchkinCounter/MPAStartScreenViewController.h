@@ -8,6 +8,6 @@
 
 #import <UIKit/UIKit.h>
 
-@interface MPAStartScreenViewController : UIViewController
+@interface MPAStartScreenViewController : UIViewController <UITextFieldDelegate>
 
 @end

@@ -152,6 +152,9 @@
         
     }
     
+    NSData *data = [NSKeyedArchiver archivedDataWithRootObject:self.players];
+    [[NSUserDefaults standardUserDefaults] setObject:data forKey:@"currentGame"];
+    
 }
 
 - (BOOL) textFieldShouldReturn:(UITextField *)textField{

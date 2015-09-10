@@ -7,14 +7,14 @@
 	<key>IDESourceControlProjectIdentifier</key>
 	<string>7B53F34C-E9E5-4C24-A291-3220E096573E</string>
 	<key>IDESourceControlProjectName</key>
-	<string>MunchkinCounter</string>
+	<string>project</string>
 	<key>IDESourceControlProjectOriginsDictionary</key>
 	<dict>
 		<key>AA77F749991D6A908D2D6E2612F8A474E32ECDF3</key>
 		<string>https://github.com/NorcalAussie/MunchkinCounter.git</string>
 	</dict>
 	<key>IDESourceControlProjectPath</key>
-	<string>MunchkinCounter.xcodeproj</string>
+	<string>MunchkinCounter.xcodeproj/project.xcworkspace</string>
 	<key>IDESourceControlProjectRelativeInstallPathDictionary</key>
 	<dict>
 		<key>AA77F749991D6A908D2D6E2612F8A474E32ECDF3</key>
