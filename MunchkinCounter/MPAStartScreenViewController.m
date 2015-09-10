@@ -51,8 +51,10 @@
     if([[segue identifier] isEqualToString:@"startGameSegue"]){
         self.numberOfPlayers = [[self.textField text] intValue];
         self.tbc = (UITabBarController *) [segue destinationViewController];
-        self.mvc = [self.tbc.viewControllers objectAtIndex:0];
-        self.mvc.numberOfPlayers = self.numberOfPlayers;
+        //self.mvc = (MPAMainViewController *) [self.tbc.viewControllers objectAtIndex:0];
+        UINavigationController *navController = [self.tbc.viewControllers objectAtIndex:0];
+        MPAMainViewController *mpa2 = (MPAMainViewController  *)navController.topViewController;
+        mpa2.numberOfPlayers = self.numberOfPlayers;
         
     }
     

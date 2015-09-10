@@ -42,7 +42,7 @@
     
     self.navBarTitle.titleView = self.navBarTextField;
     
-    [self.navBarTextField setDelegate:self];
+    //[self.navBarTextField setDelegate:self];
     
     //Set Up NSUserDefualts
     NSMutableArray *currentGame = [[NSUserDefaults standardUserDefaults] objectForKey:@"currentGame"];
@@ -70,7 +70,7 @@
         NSData *gameData = [[NSUserDefaults standardUserDefaults] objectForKey:@"currentGame"];
         self.players = [NSKeyedUnarchiver unarchiveObjectWithData:gameData];
         
-        self.numberOfPlayers = [self.players count];
+        self.numberOfPlayers = (int)[self.players count];
         
         [self update];
         
