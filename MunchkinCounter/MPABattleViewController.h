@@ -10,7 +10,7 @@
 
 @interface MPABattleViewController : UIViewController
 
-@property (nonatomic) int currentPlayerLevel;
+@property (nonatomic) int currentPlayerStrength;
 @property (nonatomic) bool currentPlayerWarrior;
 
 @end

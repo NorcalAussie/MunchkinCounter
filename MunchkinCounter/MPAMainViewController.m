@@ -8,6 +8,7 @@
 
 #import "MPAMainViewController.h"
 #import "MPAPlayer.h"
+#import "MPABattleViewController.h"
 
 @interface MPAMainViewController ()
 @property (strong, nonatomic) IBOutlet UILabel *levelLabel;
@@ -31,7 +32,7 @@
     
     self.navigationItem.hidesBackButton = YES;
     //self.navigationItem.leftBarButtonItem = nil;
-    
+    self.tabBarController.delegate = self;
     
     self.navBarTextField.frame = CGRectMake(0, 0, 100, 22);
     self.navBarTextField.textColor = [UIColor blackColor];
@@ -41,8 +42,11 @@
     [self.navBarTextField setBorderStyle:UITextBorderStyleNone];
     
     self.navBarTitle.titleView = self.navBarTextField;
+    self.navBarTextField.delegate = self;
     
     //[self.navBarTextField setDelegate:self];
+    //cell.textLabel?.font = UIFont(name: "Avenir-LightOblique", size: 12.0)
+    [self.navBarTextField setFont:[UIFont fontWithName:@"Noteworthy" size:14.0]];
     
     //Set Up NSUserDefualts
     NSMutableArray *currentGame = [[NSUserDefaults standardUserDefaults] objectForKey:@"currentGame"];
@@ -84,17 +88,20 @@
     // Do any additional setup after loading the view.
 }
 
-- (void)didReceiveMemoryWarning {
-    [super didReceiveMemoryWarning];
-    // Dispose of any resources that can be recreated.
-}
-
 #pragma mark - Helper Functions
 
-
-- (BOOL)canBecomeFirstResponder{
+- (BOOL)canBecomeFirstResponder {
     return YES;
-    
+}
+
+- (BOOL)tabBarController:(UITabBarController *)tabBarController shouldSelectViewController:(UIViewController *)viewController {
+    if ([viewController isKindOfClass:[MPABattleViewController class]]){
+        MPABattleViewController *svc = (MPABattleViewController *) viewController;
+        MPAPlayer *player = [self.players objectAtIndex:self.currentPlayerIndex];
+        svc.currentPlayerStrength = player.strength;
+        svc.currentPlayerWarrior = player.isWarrior;
+    }
+    return TRUE;
 }
 
 - (void)motionEnded:(UIEventSubtype)motion withEvent:(UIEvent *)event{
@@ -275,15 +282,5 @@
     
     
 }
-
-/*
-#pragma mark - Navigation
-
-// In a storyboard-based application, you will often want to do a little preparation before navigation
-- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
-    // Get the new view controller using [segue destinationViewController].
-    // Pass the selected object to the new view controller.
-}
-*/
 
 @end

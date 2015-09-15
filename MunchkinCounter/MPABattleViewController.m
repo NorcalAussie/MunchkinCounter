@@ -7,6 +7,7 @@
 //
 
 #import "MPABattleViewController.h"
+#import "MPAPlayer.h"
 
 @interface MPABattleViewController ()
 @property (weak, nonatomic) IBOutlet UILabel *monsterLevelLabel;
@@ -24,26 +25,39 @@
 
 @implementation MPABattleViewController
 
-@synthesize currentPlayerLevel;
+@synthesize currentPlayerStrength;
 @synthesize currentPlayerWarrior;
 
 - (void)viewDidLoad {
     [super viewDidLoad];
     
-    self.monsterLevel = 0;
+    self.monsterLevel = 1;
     self.modifier = 0;
-    self.difference = 0;
+    self.difference = self.currentPlayerStrength;
     self.numberToAdd = 1;
+    [self update];
     
     self.segmentedControl.selectedSegmentIndex = 0;
+    
     // Do any additional setup after loading the view.
+}
+
+- (void)viewWillAppear:(BOOL)animated {
+    self.monsterLevel = 1;
+    self.modifier = 0;
+    [self update];
 }
 
 - (void)update {
     self.monsterLevelLabel.text = [NSString stringWithFormat:@"%d", self.monsterLevel];
     self.modifierLabel.text = [NSString stringWithFormat:@"%d", self.modifier];
-    self.difference = self.currentPlayerLevel - (self.monsterLevel + self.modifier);
-    self.differenceLabel.text = [NSString stringWithFormat:@"%d", self.difference];
+    self.difference = self.currentPlayerStrength - (self.monsterLevel + self.modifier);
+    if (self.difference > 0){
+        self.differenceLabel.text = [NSString stringWithFormat:@"+%d", self.difference];
+    } else if (self.difference <= 0){
+        self.differenceLabel.text = [NSString stringWithFormat:@"%d", self.difference];
+    }
+    
     
     if (self.difference > 0) {
         self.resultLabel.text = @"You Win";
