@@ -13,6 +13,8 @@
 		C948F4041A1C662E0000A910 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = C948F4031A1C662E0000A910 /* Images.xcassets */; };
 		C948F4071A1C662E0000A910 /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = C948F4051A1C662E0000A910 /* LaunchScreen.xib */; };
 		C948F4131A1C662E0000A910 /* MunchkinCounterTests.m in Sources */ = {isa = PBXBuildFile; fileRef = C948F4121A1C662E0000A910 /* MunchkinCounterTests.m */; };
+		C95EFA081BA8F7010092BA2F /* MPAScoreTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = C95EFA071BA8F7010092BA2F /* MPAScoreTableViewCell.m */; };
+		C95EFA0C1BA8F9790092BA2F /* MPAScoreTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C95EFA0B1BA8F9790092BA2F /* MPAScoreTableViewController.m */; };
 		C974302D1A1CCB2700D83A67 /* MPAMainViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C974302C1A1CCB2700D83A67 /* MPAMainViewController.m */; };
 		C97430301A1CD24A00D83A67 /* MPAPlayer.m in Sources */ = {isa = PBXBuildFile; fileRef = C974302F1A1CD24A00D83A67 /* MPAPlayer.m */; };
 		C97430331A1CD79000D83A67 /* MPAStartScreenViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C97430321A1CD79000D83A67 /* MPAStartScreenViewController.m */; };
@@ -41,6 +43,10 @@
 		C948F40C1A1C662E0000A910 /* MunchkinCounterTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = MunchkinCounterTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		C948F4111A1C662E0000A910 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		C948F4121A1C662E0000A910 /* MunchkinCounterTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MunchkinCounterTests.m; sourceTree = "<group>"; };
+		C95EFA061BA8F7010092BA2F /* MPAScoreTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MPAScoreTableViewCell.h; sourceTree = "<group>"; };
+		C95EFA071BA8F7010092BA2F /* MPAScoreTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MPAScoreTableViewCell.m; sourceTree = "<group>"; };
+		C95EFA0A1BA8F9790092BA2F /* MPAScoreTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MPAScoreTableViewController.h; sourceTree = "<group>"; };
+		C95EFA0B1BA8F9790092BA2F /* MPAScoreTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MPAScoreTableViewController.m; sourceTree = "<group>"; };
 		C974302B1A1CCB2700D83A67 /* MPAMainViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MPAMainViewController.h; sourceTree = "<group>"; };
 		C974302C1A1CCB2700D83A67 /* MPAMainViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MPAMainViewController.m; sourceTree = "<group>"; };
 		C974302E1A1CD24A00D83A67 /* MPAPlayer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MPAPlayer.h; sourceTree = "<group>"; };
@@ -94,6 +100,7 @@
 				C9C557271BA155F30049B1DF /* StartView */,
 				C9C557291BA156390049B1DF /* MainView */,
 				C9C5572A1BA156A10049B1DF /* BattleView */,
+				C95EFA0D1BA8F9910092BA2F /* ScoreView */,
 				C948F3F61A1C662E0000A910 /* Supporting Files */,
 			);
 			path = MunchkinCounter;
@@ -128,6 +135,25 @@
 				C948F4111A1C662E0000A910 /* Info.plist */,
 			);
 			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		C95EFA091BA8F70B0092BA2F /* TableViewCell */ = {
+			isa = PBXGroup;
+			children = (
+				C95EFA061BA8F7010092BA2F /* MPAScoreTableViewCell.h */,
+				C95EFA071BA8F7010092BA2F /* MPAScoreTableViewCell.m */,
+			);
+			name = TableViewCell;
+			sourceTree = "<group>";
+		};
+		C95EFA0D1BA8F9910092BA2F /* ScoreView */ = {
+			isa = PBXGroup;
+			children = (
+				C95EFA0A1BA8F9790092BA2F /* MPAScoreTableViewController.h */,
+				C95EFA0B1BA8F9790092BA2F /* MPAScoreTableViewController.m */,
+				C95EFA091BA8F70B0092BA2F /* TableViewCell */,
+			);
+			name = ScoreView;
 			sourceTree = "<group>";
 		};
 		C9C557271BA155F30049B1DF /* StartView */ = {
@@ -268,9 +294,11 @@
 			buildActionMask = 2147483647;
 			files = (
 				C948F3FC1A1C662E0000A910 /* AppDelegate.m in Sources */,
+				C95EFA0C1BA8F9790092BA2F /* MPAScoreTableViewController.m in Sources */,
 				C97430301A1CD24A00D83A67 /* MPAPlayer.m in Sources */,
 				C97430331A1CD79000D83A67 /* MPAStartScreenViewController.m in Sources */,
 				C9C5572D1BA156F60049B1DF /* MPABattleViewController.m in Sources */,
+				C95EFA081BA8F7010092BA2F /* MPAScoreTableViewCell.m in Sources */,
 				C948F3F91A1C662E0000A910 /* main.m in Sources */,
 				C974302D1A1CCB2700D83A67 /* MPAMainViewController.m in Sources */,
 			);
