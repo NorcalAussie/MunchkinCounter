@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="7706" systemVersion="14F27" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="TlN-wr-k2f">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="8191" systemVersion="14F27" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="TlN-wr-k2f">
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="7703"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="8154"/>
         <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
     </dependencies>
     <scenes>
@@ -178,10 +178,10 @@
                                 </constraints>
                             </view>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Cnr-uY-2CQ">
-                                <rect key="frame" x="16" y="449" width="568" height="94"/>
+                                <rect key="frame" x="20" y="449" width="560" height="94"/>
                                 <subviews>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Strength" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="jkf-wT-faB">
-                                        <rect key="frame" x="253" y="8" width="63" height="28"/>
+                                        <rect key="frame" x="249" y="8" width="63" height="28"/>
                                         <fontDescription key="fontDescription" name="Noteworthy-Bold" family="Noteworthy" pointSize="17"/>
                                         <color key="textColor" red="0.1529411765" green="0.1333333333" blue="0.054901960780000002" alpha="1" colorSpace="calibratedRGB"/>
                                         <nil key="highlightedColor"/>
@@ -199,7 +199,7 @@
                                         </variation>
                                     </label>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="0" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="0kL-Dt-pBN">
-                                        <rect key="frame" x="278" y="44" width="12" height="28"/>
+                                        <rect key="frame" x="274" y="44" width="12" height="28"/>
                                         <fontDescription key="fontDescription" name="Noteworthy-Light" family="Noteworthy" pointSize="17"/>
                                         <color key="textColor" red="0.1529411765" green="0.1333333333" blue="0.054901960780000002" alpha="1" colorSpace="calibratedRGB"/>
                                         <nil key="highlightedColor"/>
@@ -277,8 +277,8 @@
                     <navigationItem key="navigationItem" id="eA8-UU-SDt">
                         <nil key="title"/>
                         <barButtonItem key="leftBarButtonItem" id="a9t-aD-2eS">
-                            <view key="customView" contentMode="scaleToFill" id="Uui-Gr-CeC">
-                                <rect key="frame" x="16" y="2" width="110" height="40"/>
+                            <view key="customView" userInteractionEnabled="NO" contentMode="scaleToFill" id="Uui-Gr-CeC">
+                                <rect key="frame" x="20" y="2" width="110" height="40"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <subviews>
                                     <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" contentHorizontalAlignment="center" contentVerticalAlignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="SU5-vu-zCR">
@@ -315,18 +315,18 @@
                                 </constraints>
                             </view>
                         </barButtonItem>
-                        <textField key="titleView" opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" borderStyle="roundedRect" minimumFontSize="17" id="iez-7v-hKn">
+                        <textField key="titleView" opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" text="Name" borderStyle="roundedRect" textAlignment="center" minimumFontSize="17" id="iez-7v-hKn">
                             <rect key="frame" x="180" y="7" width="240" height="30"/>
                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                            <textInputTraits key="textInputTraits" returnKeyType="done"/>
+                            <textInputTraits key="textInputTraits" autocapitalizationType="words" autocorrectionType="no" spellCheckingType="no" returnKeyType="done"/>
                             <connections>
                                 <action selector="nameChange:" destination="vXZ-lx-hvc" eventType="editingDidEnd" id="kUn-vI-im0"/>
                             </connections>
                         </textField>
                         <barButtonItem key="rightBarButtonItem" title="New Game" id="1ok-g5-WMY">
                             <button key="customView" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="yvx-L2-671">
-                                <rect key="frame" x="508" y="570" width="76" height="30"/>
+                                <rect key="frame" x="504" y="7" width="76" height="30"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" name="Noteworthy-Light" family="Noteworthy" pointSize="15"/>
                                 <state key="normal" title="New Game">
@@ -378,10 +378,10 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="3OC-vQ-Bc8">
-                                <rect key="frame" x="16" y="66" width="284" height="333"/>
+                                <rect key="frame" x="20" y="66" width="280" height="333"/>
                                 <subviews>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="jCZ-XG-QcJ">
-                                        <rect key="frame" x="8" y="289" width="268" height="36"/>
+                                        <rect key="frame" x="8" y="289" width="264" height="36"/>
                                         <fontDescription key="fontDescription" name="Noteworthy-Light" family="Noteworthy" pointSize="15"/>
                                         <color key="tintColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                         <state key="normal" title="-">
@@ -392,13 +392,13 @@
                                         </connections>
                                     </button>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="0" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="stR-oc-9uC">
-                                        <rect key="frame" x="136" y="153" width="12" height="28"/>
+                                        <rect key="frame" x="134" y="153" width="12" height="28"/>
                                         <fontDescription key="fontDescription" name="Noteworthy-Light" family="Noteworthy" pointSize="17"/>
                                         <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="CK7-Hv-HND">
-                                        <rect key="frame" x="8" y="8" width="268" height="36"/>
+                                        <rect key="frame" x="8" y="8" width="264" height="36"/>
                                         <fontDescription key="fontDescription" name="Noteworthy-Light" family="Noteworthy" pointSize="15"/>
                                         <color key="tintColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                         <state key="normal" title="+"/>
@@ -421,10 +421,10 @@
                                 </constraints>
                             </view>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="8rK-jX-DdB">
-                                <rect key="frame" x="300" y="66" width="284" height="333"/>
+                                <rect key="frame" x="300" y="66" width="280" height="333"/>
                                 <subviews>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="84r-Kc-4sO">
-                                        <rect key="frame" x="8" y="289" width="268" height="36"/>
+                                        <rect key="frame" x="8" y="289" width="264" height="36"/>
                                         <fontDescription key="fontDescription" name="Noteworthy-Light" family="Noteworthy" pointSize="15"/>
                                         <color key="tintColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                         <state key="normal" title="-">
@@ -435,13 +435,13 @@
                                         </connections>
                                     </button>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="0" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Y8b-0L-16U">
-                                        <rect key="frame" x="136" y="153" width="12" height="28"/>
+                                        <rect key="frame" x="134" y="153" width="12" height="28"/>
                                         <fontDescription key="fontDescription" name="Noteworthy-Light" family="Noteworthy" pointSize="17"/>
                                         <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="BOz-wj-c8w">
-                                        <rect key="frame" x="8" y="8" width="268" height="36"/>
+                                        <rect key="frame" x="8" y="8" width="264" height="36"/>
                                         <fontDescription key="fontDescription" name="Noteworthy-Light" family="Noteworthy" pointSize="15"/>
                                         <color key="tintColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                         <state key="normal" title="+">
@@ -467,22 +467,22 @@
                                 </constraints>
                             </view>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="ipA-eg-b8D">
-                                <rect key="frame" x="16" y="443" width="568" height="100"/>
+                                <rect key="frame" x="20" y="443" width="560" height="100"/>
                                 <subviews>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="0" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="FMI-Si-CWe">
-                                        <rect key="frame" x="278" y="36" width="12" height="28"/>
+                                        <rect key="frame" x="274" y="36" width="12" height="28"/>
                                         <fontDescription key="fontDescription" name="Noteworthy-Light" family="Noteworthy" pointSize="17"/>
                                         <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="You Win" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="d8g-pa-yCe">
-                                        <rect key="frame" x="259" y="72" width="51" height="28"/>
+                                        <rect key="frame" x="255" y="72" width="51" height="28"/>
                                         <fontDescription key="fontDescription" name="Noteworthy-Light" family="Noteworthy" pointSize="17"/>
                                         <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Result" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="vTS-Gp-NwZ">
-                                        <rect key="frame" x="261" y="0.0" width="47" height="28"/>
+                                        <rect key="frame" x="257" y="0.0" width="47" height="28"/>
                                         <fontDescription key="fontDescription" name="Noteworthy-Bold" family="Noteworthy" pointSize="17"/>
                                         <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                         <nil key="highlightedColor"/>
@@ -499,7 +499,7 @@
                                 </constraints>
                             </view>
                             <segmentedControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="lC2-Bc-zJa">
-                                <rect key="frame" x="16" y="407" width="568" height="29"/>
+                                <rect key="frame" x="20" y="407" width="560" height="29"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="568" id="Mwu-X4-YtF"/>
                                     <constraint firstAttribute="height" constant="28" id="ur9-yY-KaI"/>
@@ -520,13 +520,13 @@
                                 </connections>
                             </segmentedControl>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Monster Level" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="MrM-eP-5qc">
-                                <rect key="frame" x="107" y="30" width="103" height="28"/>
+                                <rect key="frame" x="109" y="30" width="103" height="28"/>
                                 <fontDescription key="fontDescription" name="Noteworthy-Bold" family="Noteworthy" pointSize="17"/>
                                 <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Modifier" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="gGh-Ns-9e2">
-                                <rect key="frame" x="413" y="30" width="60" height="28"/>
+                                <rect key="frame" x="410" y="30" width="60" height="28"/>
                                 <fontDescription key="fontDescription" name="Noteworthy-Bold" family="Noteworthy" pointSize="17"/>
                                 <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                 <nil key="highlightedColor"/>
@@ -550,6 +550,7 @@
                             <constraint firstItem="ipA-eg-b8D" firstAttribute="trailing" secondItem="Bqp-4I-CA1" secondAttribute="trailingMargin" id="abt-jl-6bJ"/>
                             <constraint firstItem="8rK-jX-DdB" firstAttribute="top" secondItem="gGh-Ns-9e2" secondAttribute="bottom" constant="8" id="dgI-kb-YrD"/>
                             <constraint firstItem="8rK-jX-DdB" firstAttribute="width" secondItem="3OC-vQ-Bc8" secondAttribute="width" id="hI5-lc-zZJ"/>
+                            <constraint firstItem="N7L-Z7-BTF" firstAttribute="top" secondItem="d8g-pa-yCe" secondAttribute="bottom" constant="8" id="iBe-6Z-QrR"/>
                             <constraint firstItem="ipA-eg-b8D" firstAttribute="top" relation="lessThanOrEqual" secondItem="JyY-SV-yxt" secondAttribute="bottom" priority="100" constant="423" id="jYO-iG-LH6"/>
                             <constraint firstItem="N7L-Z7-BTF" firstAttribute="top" secondItem="ipA-eg-b8D" secondAttribute="bottom" constant="8" symbolic="YES" id="kCR-E4-LIV"/>
                             <constraint firstItem="8rK-jX-DdB" firstAttribute="leading" secondItem="3OC-vQ-Bc8" secondAttribute="trailing" id="kFu-of-YZu"/>
@@ -557,12 +558,14 @@
                             <constraint firstItem="8rK-jX-DdB" firstAttribute="leading" secondItem="Bqp-4I-CA1" secondAttribute="leading" constant="300" id="qUT-PO-N9V"/>
                             <constraint firstItem="MrM-eP-5qc" firstAttribute="centerX" secondItem="CK7-Hv-HND" secondAttribute="centerX" constant="0.5" id="qgM-3Y-Dw7"/>
                             <constraint firstItem="BOz-wj-c8w" firstAttribute="centerX" secondItem="gGh-Ns-9e2" secondAttribute="centerX" constant="-0.5" id="rEN-1M-8pC"/>
+                            <constraint firstItem="gGh-Ns-9e2" firstAttribute="centerX" secondItem="8rK-jX-DdB" secondAttribute="centerX" id="rfJ-s9-6u9"/>
                             <constraint firstItem="ipA-eg-b8D" firstAttribute="top" secondItem="lC2-Bc-zJa" secondAttribute="bottom" constant="8" symbolic="YES" id="rrS-7B-fnu"/>
                             <constraint firstItem="MrM-eP-5qc" firstAttribute="top" secondItem="Bqp-4I-CA1" secondAttribute="topMargin" constant="30" id="ye3-ad-Ojq"/>
                         </constraints>
                         <variation key="default">
                             <mask key="constraints">
                                 <exclude reference="qUT-PO-N9V"/>
+                                <exclude reference="rEN-1M-8pC"/>
                                 <exclude reference="E3A-hS-AjO"/>
                             </mask>
                         </variation>
@@ -590,8 +593,10 @@
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <prototypes>
                             <tableViewCell userInteractionEnabled="NO" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="cell" rowHeight="75" id="HxV-I1-RKJ" customClass="MPAScoreTableViewCell">
+                                <rect key="frame" x="0.0" y="22" width="600" height="75"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="HxV-I1-RKJ" id="KuC-SM-I0n">
+                                    <rect key="frame" x="0.0" y="0.0" width="600" height="74"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Name" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="0Ey-Z4-YEX">
@@ -707,7 +712,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Enter Number of Players" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="1bp-6y-yXN">
-                                <rect key="frame" x="206" y="165" width="188" height="65"/>
+                                <rect key="frame" x="207" y="165" width="186" height="65"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
@@ -722,7 +727,7 @@
                                 </variation>
                             </label>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="mi0-o6-oHY">
-                                <rect key="frame" x="261" y="375" width="79" height="30"/>
+                                <rect key="frame" x="261" y="375" width="78" height="30"/>
                                 <state key="normal" title="Start Game">
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
@@ -737,7 +742,7 @@
                                 </variation>
                                 <connections>
                                     <action selector="startGame:" destination="TlN-wr-k2f" eventType="touchUpInside" id="iwZ-oF-bjV"/>
-                                    <segue destination="5Du-gt-Fzq" kind="showDetail" identifier="startGameSegue" id="Spi-ah-Ghe"/>
+                                    <segue destination="5Du-gt-Fzq" kind="show" identifier="startGameSegue" id="Spi-ah-Ghe"/>
                                 </connections>
                             </button>
                             <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="5H6-yb-1pm">

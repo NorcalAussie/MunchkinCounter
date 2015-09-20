@@ -19,6 +19,8 @@
 @property (strong, nonatomic) IBOutlet UITextField *navBarTextField;
 @property (strong, nonatomic) IBOutlet UISwitch *warriorSwitch;
 
+@property (strong, nonatomic) MPAPlayer *currentPlayer;
+
 @property (nonatomic) int currentPlayerIndex;
 
 @end
@@ -31,21 +33,18 @@
     [super viewDidLoad];
     
     self.navigationItem.hidesBackButton = YES;
-    //self.navigationItem.leftBarButtonItem = nil;
     self.tabBarController.delegate = self;
     
     self.navBarTextField.frame = CGRectMake(0, 0, 100, 22);
     self.navBarTextField.textColor = [UIColor blackColor];
-    self.navBarTextField.font = [UIFont boldSystemFontOfSize:19];
     self.navBarTextField.textAlignment = NSTextAlignmentCenter;
     self.navBarTextField.backgroundColor = [UIColor clearColor];
+    self.navBarTextField.allowsEditingTextAttributes = true;
     [self.navBarTextField setBorderStyle:UITextBorderStyleNone];
     
     self.navBarTitle.titleView = self.navBarTextField;
     self.navBarTextField.delegate = self;
-    
-    //[self.navBarTextField setDelegate:self];
-    //cell.textLabel?.font = UIFont(name: "Avenir-LightOblique", size: 12.0)
+
     [self.navBarTextField setFont:[UIFont fontWithName:@"Noteworthy" size:14.0]];
     
     //Set Up NSUserDefualts
@@ -61,93 +60,28 @@
         self.levelLabel.text = @"1";
         self.gearLabel.text = @"0";
         self.strengthLabel.text = @"1";
-        
         self.navBarTextField.text = @"Player1";
-        
         self.warriorSwitch.on = NO;
         
-        
         [self setUpPlayers];
-        
-    }else{
+    } else {
         //Else initialize our array with the NSUserDefualt Data
         NSData *gameData = [[NSUserDefaults standardUserDefaults] objectForKey:@"currentGame"];
         self.players = [NSKeyedUnarchiver unarchiveObjectWithData:gameData];
         
         self.numberOfPlayers = (int)[self.players count];
         
+        [self setCurrentPlayer];
         [self update];
-        
     }
-
-    
-    //Logs
-    NSLog(@"Number of Players:%d",numberOfPlayers);
-    
-    
-    // Do any additional setup after loading the view.
 }
 
 #pragma mark - Helper Functions
-
-- (BOOL)canBecomeFirstResponder {
-    return YES;
-}
-
-- (BOOL)tabBarController:(UITabBarController *)tabBarController shouldSelectViewController:(UIViewController *)viewController {
-    if ([viewController isKindOfClass:[MPABattleViewController class]]){
-        MPABattleViewController *svc = (MPABattleViewController *) viewController;
-        MPAPlayer *player = [self.players objectAtIndex:self.currentPlayerIndex];
-        svc.currentPlayerStrength = player.strength;
-        svc.currentPlayerWarrior = player.isWarrior;
-    }
-    return TRUE;
-}
-
-- (void)motionEnded:(UIEventSubtype)motion withEvent:(UIEvent *)event{
-    if(UIEventSubtypeMotionShake){
-        int rollNumber = arc4random()%6;
-        NSString *rollMessage = [NSString stringWithFormat:@"You rolled a %d", rollNumber];
-        UIAlertView *dieRoll = [[UIAlertView alloc] initWithTitle:@"Die Roll" message:rollMessage delegate:self cancelButtonTitle:@"Ok" otherButtonTitles:nil, nil];
-        [dieRoll show];
-    }
-    
-}
-
-- (void)update {
-    
-    MPAPlayer *player = [self.players objectAtIndex:self.currentPlayerIndex];
-    
-    player.strength = player.level + player.gear;
-    
-    self.navBarTextField.text = player.name;
-    self.levelLabel.text = [NSString stringWithFormat:@"%d",player.level];
-    self.gearLabel.text = [NSString stringWithFormat:@"%d",player.gear];
-    self.strengthLabel.text = [NSString stringWithFormat:@"%d",player.strength];
-    
-    if(player.isWarrior){
-        self.warriorSwitch.on = YES;
-        
-    }else if(!player.isWarrior){
-        self.warriorSwitch.on = NO;
-        
-    }
-    
-    [self.players replaceObjectAtIndex:self.currentPlayerIndex withObject:player];
-    
-    //Update UserDefaults
-    NSData *data = [NSKeyedArchiver archivedDataWithRootObject:self.players];
-    [[NSUserDefaults standardUserDefaults] setObject:data forKey:@"currentGame"];
-    
-}
-
-- (void)setUpPlayers{
-    
+- (void)setUpPlayers {
     int playerNumber = 1;
     
     for(int i=0; i<self.numberOfPlayers; i++){
         NSString *playerName = [NSString stringWithFormat:@"Player%d",playerNumber];
-        NSLog(@"Initializing Player%d", playerNumber);
         
         //Initilize Player
         MPAPlayer *player = [[MPAPlayer alloc] initWithName:playerName];
@@ -156,108 +90,131 @@
         [self.players addObject:player];
         
         playerNumber++;
+    }
+    NSData *data = [NSKeyedArchiver archivedDataWithRootObject:self.players];
+    [[NSUserDefaults standardUserDefaults] setObject:data forKey:@"currentGame"];
+    self.currentPlayer = self.players[0];
+}
+
+- (void)update {
+    [self setCurrentPlayer];
+    
+    self.currentPlayer.strength = self.currentPlayer.level + self.currentPlayer.gear;
+    
+    self.navBarTextField.text = self.currentPlayer.name;
+    self.levelLabel.text = [NSString stringWithFormat:@"%d",self.currentPlayer.level];
+    self.gearLabel.text = [NSString stringWithFormat:@"%d",self.currentPlayer.gear];
+    self.strengthLabel.text = [NSString stringWithFormat:@"%d",self.currentPlayer.strength];
+    
+    if(self.currentPlayer.isWarrior) {
+        self.warriorSwitch.on = YES;
+        
+    }else if(!self.currentPlayer.isWarrior) {
+        self.warriorSwitch.on = NO;
         
     }
     
+    [self.players replaceObjectAtIndex:self.currentPlayerIndex withObject:self.currentPlayer];
+    
+    //Update UserDefaults
     NSData *data = [NSKeyedArchiver archivedDataWithRootObject:self.players];
     [[NSUserDefaults standardUserDefaults] setObject:data forKey:@"currentGame"];
-    
 }
 
-- (BOOL) textFieldShouldReturn:(UITextField *)textField{
+- (void)setCurrentPlayer {
+    self.currentPlayer = [self.players objectAtIndex:self.currentPlayerIndex];
+}
+
+- (BOOL) textFieldShouldReturn:(UITextField *)textField {
     [self.navBarTextField resignFirstResponder];
     return YES;
-    
+}
+
+- (BOOL)canBecomeFirstResponder {
+    return YES;
+}
+
+- (BOOL)tabBarController:(UITabBarController *)tabBarController shouldSelectViewController:(UIViewController *)viewController {
+    if ([viewController isKindOfClass:[MPABattleViewController class]]) {
+        MPABattleViewController *svc = (MPABattleViewController *) viewController;
+        svc.currentPlayerStrength = self.currentPlayer.strength;
+        svc.currentPlayerWarrior = self.currentPlayer.isWarrior;
+    }
+    return TRUE;
+}
+
+- (void)motionEnded:(UIEventSubtype)motion withEvent:(UIEvent *)event {
+    if(UIEventSubtypeMotionShake) {
+        int rollNumber = arc4random()%6;
+        NSString *rollMessage = [NSString stringWithFormat:@"You rolled a %d", rollNumber];
+        
+        UIAlertController *dieRoll = [UIAlertController alertControllerWithTitle:@"Die Roll" message:rollMessage preferredStyle:UIAlertControllerStyleAlert];
+        
+        UIAlertAction* ok = [UIAlertAction actionWithTitle:@"Ok" style:UIAlertActionStyleDefault handler:nil];
+        [dieRoll addAction:ok];
+        
+        [self presentViewController:dieRoll animated:YES completion:nil];
+    }
 }
 
 #pragma mark - IBactions
-
-- (IBAction)nameChange:(id)sender{
-    
-    MPAPlayer *player = [self.players objectAtIndex:self.currentPlayerIndex];
+- (IBAction)nameChange:(id)sender {
     UITextView *tv = (UITextView *)sender;
-    player.name = tv.text;
-    [self.players replaceObjectAtIndex:self.currentPlayerIndex withObject:player];
+    self.currentPlayer.name = tv.text;
     [self update];
-    
 }
 
 - (IBAction)previousPlayer:(id)sender {
-    
-    if(self.currentPlayerIndex == 0){
+    if(self.currentPlayerIndex == 0) {
         self.currentPlayerIndex = self.numberOfPlayers - 1;
         
-    }else{
+    } else {
         self.currentPlayerIndex--;
     }
-    
     [self update];
-    
 }
 
 - (IBAction)nextPlayer:(id)sender {
-    
-    if(self.currentPlayerIndex == self.numberOfPlayers - 1){
+    if(self.currentPlayerIndex == self.numberOfPlayers - 1) {
         self.currentPlayerIndex = 0;
 
-    }else{
+    } else {
         self.currentPlayerIndex++;
     }
-    
     [self update];
-    
 }
 
 - (IBAction)addLevel:(id)sender {
-    
-    MPAPlayer *player = [self.players objectAtIndex:self.currentPlayerIndex];
-    player.level++;
-    [self.players replaceObjectAtIndex:self.currentPlayerIndex withObject:player];
-    
+    self.currentPlayer.level++;
     [self update];
     
 }
 
 - (IBAction)subtractLevel:(id)sender {
-    
-    MPAPlayer *player = [self.players objectAtIndex:self.currentPlayerIndex];
-    if(player.level > 0){
-        player.level--;
-        [self.players replaceObjectAtIndex:self.currentPlayerIndex withObject:player];
+    if(self.currentPlayer.level > 0) {
+        self.currentPlayer.level--;
         [self update];
     }
-
 }
 
 - (IBAction)addGear:(id)sender {
-
-    MPAPlayer *player = [self.players objectAtIndex:self.currentPlayerIndex];
-    player.gear++;
-    [self.players replaceObjectAtIndex:self.currentPlayerIndex withObject:player];
+    self.currentPlayer.gear++;
     [self update];
-
 }
 
 - (IBAction)subtractGear:(id)sender {
-
-    MPAPlayer *player = [self.players objectAtIndex:self.currentPlayerIndex];
-    player.gear--;
-    [self.players replaceObjectAtIndex:self.currentPlayerIndex withObject:player];
+    self.currentPlayer.gear--;
     [self update];
-
 }
 
 - (IBAction)setWarrior:(id)sender {
-    
-    MPAPlayer *player = [self.players objectAtIndex:self.currentPlayerIndex];
-    if (player.isWarrior){
-        player.isWarrior = false;
+    if (self.currentPlayer.isWarrior) {
+        self.currentPlayer.isWarrior = false;
         
-    }else if (!player.isWarrior){
-        player.isWarrior = true;
+    }else if (!self.currentPlayer.isWarrior) {
+        self.currentPlayer.isWarrior = true;
     }
     [self update];
-
 }
 
 - (IBAction)newGame:(id)sender {
@@ -278,9 +235,6 @@
     [ac addAction:confirm];
     
     [self presentViewController:ac animated:YES completion:nil];
-    
-    
-    
 }
 
 @end
