@@ -20,12 +20,7 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    
     [self.tableView setContentInset:UIEdgeInsetsMake(15, 0, 0, 0)];
-    
-    //Get players array
-    //NSData *gameData = [[NSUserDefaults standardUserDefaults] objectForKey:@"currentGame"];
-    //self.players = [NSKeyedUnarchiver unarchiveObjectWithData:gameData];
 }
 
 - (void)viewWillAppear:(BOOL)animated {
@@ -35,19 +30,15 @@
 }
 
 #pragma mark - Table view data source
-
 - (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView {
-
     // Return the number of sections.
     return 1;
 }
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
-
     // Return the number of rows in the section.
     return self.players.count;
 }
-
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
     MPAScoreTableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"cell" forIndexPath:indexPath];
@@ -60,13 +51,6 @@
     cell.cellStrengthLabel.text = [NSString stringWithFormat:@"%d",player.strength];
     
     return cell;
-}
-
-
-// Override to support conditional rearranging of the table view.
-- (BOOL)tableView:(UITableView *)tableView canMoveRowAtIndexPath:(NSIndexPath *)indexPath {
-    //Return NO if you do not want the item to be re-orderable.
-    return YES;
 }
 
 @end

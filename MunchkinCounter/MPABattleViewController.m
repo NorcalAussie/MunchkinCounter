@@ -38,8 +38,6 @@
     [self update];
     
     self.segmentedControl.selectedSegmentIndex = 0;
-    
-    // Do any additional setup after loading the view.
 }
 
 - (void)viewWillAppear:(BOOL)animated {
@@ -52,9 +50,9 @@
     self.monsterLevelLabel.text = [NSString stringWithFormat:@"%d", self.monsterLevel];
     self.modifierLabel.text = [NSString stringWithFormat:@"%d", self.modifier];
     self.difference = self.currentPlayerStrength - (self.monsterLevel + self.modifier);
-    if (self.difference > 0){
+    if (self.difference > 0) {
         self.differenceLabel.text = [NSString stringWithFormat:@"+%d", self.difference];
-    } else if (self.difference <= 0){
+    } else if (self.difference <= 0) {
         self.differenceLabel.text = [NSString stringWithFormat:@"%d", self.difference];
     }
     
@@ -74,11 +72,11 @@
 }
 
 - (IBAction)segmentChanged:(id)sender {
-    if (self.segmentedControl.selectedSegmentIndex == 0){
+    if (self.segmentedControl.selectedSegmentIndex == 0) {
         self.numberToAdd = 1;
-    } else if (self.segmentedControl.selectedSegmentIndex == 1){
+    } else if (self.segmentedControl.selectedSegmentIndex == 1) {
         self.numberToAdd = 5;
-    } else if (self.segmentedControl.selectedSegmentIndex == 2){
+    } else if (self.segmentedControl.selectedSegmentIndex == 2) {
         self.numberToAdd = 10;
     }
 }
@@ -89,7 +87,7 @@
 }
 
 - (IBAction)decreaseMonsterLevel:(id)sender {
-    if ((self.monsterLevel - self.numberToAdd) > 0){
+    if ((self.monsterLevel - self.numberToAdd) > 0) {
         self.monsterLevel -= self.numberToAdd;
         [self update];
     }
@@ -104,6 +102,5 @@
     self.modifier-= self.numberToAdd;
     [self update];
 }
-
 
 @end
